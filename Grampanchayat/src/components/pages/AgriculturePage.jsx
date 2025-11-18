@@ -1,5 +1,5 @@
 import PageHero from '../PageHero';
-import gavImage from '../../images/gav.jpg';
+import mandirImage from '../../images/mandir.jpg';
 
 const AgriculturePage = () => {
   const agricultureInfo = [
@@ -24,7 +24,7 @@ const AgriculturePage = () => {
       <PageHero 
         title="शेती" 
         subtitle="माहिती"
-        image={gavImage}
+        image={mandirImage}
       />
       <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
@@ -40,7 +40,7 @@ const AgriculturePage = () => {
                 className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300"
               >
                 <img
-                  src={gavImage}
+                  src={mandirImage}
                   alt={info.title}
                   className="w-full h-[250px] object-cover"
                 />

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useHomeData } from '../hooks/useHomeData';
-import gavImage from '../images/gav.jpg'; // Fallback image
+import backImage from '../images/back.jpg'; // Fallback image
 
 const Hero = () => {
   const { data, loading } = useHomeData();
@@ -26,7 +26,7 @@ const Hero = () => {
   const baseUrl = getApiBaseUrl();
   
   const getImageUrl = (url) => {
-    if (!url) return gavImage;
+    if (!url) return backImage;
     if (url.startsWith('http')) return url;
     
     // API returns URLs like "/api/images/..." 
@@ -70,12 +70,12 @@ const Hero = () => {
   const descriptions = heroData?.descriptions || [];
 
   return (
-    <section id="home" className="relative h-[500px] md:h-[600px] overflow-hidden">
+    <section id="home" className="relative h-[550px] md:h-[700px] overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat transform transition-transform duration-700 hover:scale-105"
         style={{ 
-          backgroundImage: imageError ? `url(${gavImage})` : `url(${heroImage})`,
+          backgroundImage: imageError ? `url(${backImage})` : `url(${heroImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -95,24 +95,35 @@ const Hero = () => {
             setImageError(false);
           }}
         />
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/40 to-teal-900/60"></div>
+        {/* Animated overlay pattern */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+          }}></div>
+        </div>
       </div>
 
       {/* Content Overlay */}
-      <div className="relative h-full flex flex-col items-center justify-center text-white z-10">
+      <div className="relative h-full flex flex-col items-center justify-center text-white z-10 fade-in">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 drop-shadow-lg">
-            {loading ? 'लोड होत आहे...' : villageName}
-          </h1>
+          <div className="slide-up">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 drop-shadow-2xl animate-float">
+              <span className="bg-gradient-to-r from-white via-teal-100 to-white bg-clip-text text-transparent">
+                {loading ? 'लोड होत आहे...' : villageName}
+              </span>
+            </h1>
+          </div>
           {!loading && (
-            <div className="space-y-4 max-w-4xl mx-auto">
+            <div className="space-y-5 max-w-4xl mx-auto mt-6">
               {descriptions.length > 0 ? (
                 descriptions.map((desc, index) => (
-                  <div key={index}>
-                    <p className="text-xl md:text-2xl mb-2 font-semibold drop-shadow-md">
+                  <div key={index} className="fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
+                    <p className="text-2xl md:text-3xl mb-3 font-bold drop-shadow-lg text-white/95">
                       {desc.subtitle?.[language] || desc.subtitle?.mr || ''}
                     </p>
-                    <p className="text-lg md:text-xl drop-shadow-md">
+                    <p className="text-lg md:text-xl drop-shadow-lg text-white/90 leading-relaxed">
                       {desc.description?.[language] || desc.description?.mr || ''}
                     </p>
                   </div>
@@ -120,21 +131,21 @@ const Hero = () => {
               ) : (
                 // Fallback content if no descriptions
                 <>
-                  <div>
-                    <p className="text-xl md:text-2xl mb-2 font-semibold drop-shadow-md">आपला अभिमान</p>
-                    <p className="text-lg md:text-xl drop-shadow-md">
+                  <div className="fade-in">
+                    <p className="text-2xl md:text-3xl mb-3 font-bold drop-shadow-lg text-white/95">आपला अभिमान</p>
+                    <p className="text-lg md:text-xl drop-shadow-lg text-white/90 leading-relaxed">
                       एक समृद्ध शांत गाव – जिथे परंपरा, संस्कृती आणि शेतीचा अभिमान जपला जातो.
                     </p>
                   </div>
-                  <div>
-                    <p className="text-xl md:text-2xl mb-2 font-semibold drop-shadow-md">विकासाच्या दिशेने</p>
-                    <p className="text-lg md:text-xl drop-shadow-md">
+                  <div className="fade-in" style={{ animationDelay: '0.2s' }}>
+                    <p className="text-2xl md:text-3xl mb-3 font-bold drop-shadow-lg text-white/95">विकासाच्या दिशेने</p>
+                    <p className="text-lg md:text-xl drop-shadow-lg text-white/90 leading-relaxed">
                       आत्मनिर्भर आणि प्रगत गावाची निर्मिती.
                     </p>
                   </div>
-                  <div>
-                    <p className="text-xl md:text-2xl mb-2 font-semibold drop-shadow-md">वारसा आणि भक्ती</p>
-                    <p className="text-lg md:text-xl drop-shadow-md">
+                  <div className="fade-in" style={{ animationDelay: '0.4s' }}>
+                    <p className="text-2xl md:text-3xl mb-3 font-bold drop-shadow-lg text-white/95">वारसा आणि भक्ती</p>
+                    <p className="text-lg md:text-xl drop-shadow-lg text-white/90 leading-relaxed">
                       मंदिरे, संस्कृती आणि अखंड श्रद्धेचे स्थान.
                     </p>
                   </div>

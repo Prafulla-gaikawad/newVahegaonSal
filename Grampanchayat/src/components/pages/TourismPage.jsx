@@ -1,19 +1,19 @@
 import PageHero from '../PageHero';
 import mandirImage from '../../images/mandir.jpg';
-import gavImage from '../../images/gav.jpg';
+import paryatanImage from '../../images/paryatan.jpg';
 
 const TourismPage = () => {
   const touristPlaces = [
     {
       id: 1,
-      image: mandirImage,
+      image: paryatanImage,
       title: 'पर्यटन स्थळ 1',
       description: 'गावातील एक सुंदर पर्यटन स्थळ जिथे आपण निसर्गाचा आनंद घेऊ शकता आणि शांत वातावरणात विश्रांती घेऊ शकता.',
       location: 'वाहेगाव साळ'
     },
     {
       id: 2,
-      image: gavImage,
+      image: mandirImage,
       title: 'पर्यटन स्थळ 2',
       description: 'हा एक ऐतिहासिक आणि सांस्कृतिक महत्त्वाचा पर्यटन स्थळ आहे जिथे गावाची समृद्ध परंपरा आणि संस्कृती पाहायला मिळते.',
       location: 'वाहेगाव साळ'
@@ -32,7 +32,7 @@ const TourismPage = () => {
       <PageHero 
         title="पर्यटन स्थळ" 
         subtitle="माहिती"
-        image={gavImage}
+        image={paryatanImage}
       />
       <section className="py-16 bg-white">
       <div className="container mx-auto px-4">

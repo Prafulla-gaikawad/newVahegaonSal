@@ -1,5 +1,4 @@
 import PageHero from '../PageHero';
-import gavImage from '../../images/gav.jpg';
 import mandirImage from '../../images/mandir.jpg';
 
 const SchemesPage = () => {
@@ -55,7 +54,7 @@ const SchemesPage = () => {
                 className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300"
               >
                 <img
-                  src={gavImage}
+                  src={mandirImage}
                   alt={scheme.title}
                   className="w-full h-[200px] object-cover"
                 />

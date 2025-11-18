@@ -1,7 +1,7 @@
 import PageHero from '../PageHero';
 import PopulationStats from '../PopulationStats';
 import Achievements from '../Achievements';
-import gavImage from '../../images/gav.jpg';
+import backImage from '../../images/back.jpg';
 
 const VillageInfoPage = () => {
   return (
@@ -9,7 +9,7 @@ const VillageInfoPage = () => {
       <PageHero 
         title="गावाची माहिती" 
         subtitle="माहिती"
-        image={gavImage}
+        image={backImage}
       />
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -46,7 +46,7 @@ const VillageInfoPage = () => {
         </div>
       </section>
       <Achievements />
-      <PopulationStats />
+      {/* <PopulationStats /> */}
     </div>
   );
 };

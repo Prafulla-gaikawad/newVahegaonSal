@@ -1,7 +1,7 @@
 import PageHero from '../PageHero';
 import About from '../About';
 import Leadership from '../Leadership';
-import gavImage from '../../images/gav.jpg';
+import backImage from '../../images/back.jpg';
 
 const AboutPage = () => {
   return (
@@ -9,7 +9,7 @@ const AboutPage = () => {
       <PageHero 
         title="आमच्याबद्दल" 
         subtitle="माहिती"
-        image={gavImage}
+        image={backImage}
       />
       <About />
       <Leadership />

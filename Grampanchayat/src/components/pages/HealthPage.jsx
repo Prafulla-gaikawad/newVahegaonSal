@@ -1,6 +1,5 @@
 import PageHero from "../PageHero";
 import infoImage from "../../images/info.jpg";
-import gavImage from "../../images/gav.jpg";
 
 const HealthPage = () => {
   const healthCenters = [
@@ -26,7 +25,7 @@ const HealthPage = () => {
 
   return (
     <div>
-      <PageHero title="आरोग्य दवाखाने" subtitle="माहिती" image={gavImage} />
+      <PageHero title="आरोग्य दवाखाने" subtitle="माहिती" image={infoImage} />
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">

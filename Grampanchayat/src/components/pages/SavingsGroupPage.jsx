@@ -1,5 +1,5 @@
 import PageHero from '../PageHero';
-import gavImage from '../../images/gav.jpg';
+import infoImage from '../../images/info.jpg';
 
 const SavingsGroupPage = () => {
   const savingsGroups = [
@@ -34,7 +34,7 @@ const SavingsGroupPage = () => {
       <PageHero 
         title="बचत गट माहिती" 
         subtitle="माहिती"
-        image={gavImage}
+        image={infoImage}
       />
       <section className="py-16 bg-white">
       <div className="container mx-auto px-4">

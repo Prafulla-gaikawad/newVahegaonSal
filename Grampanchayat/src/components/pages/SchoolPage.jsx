@@ -1,6 +1,6 @@
 import PageHero from '../PageHero';
-import gavImage from '../../images/gav.jpg';
 import mandirImage from '../../images/mandir.jpg';
+import schoolImage from '../../images/vahegaonSchool.jpg';
 
 const SchoolPage = () => {
   const schools = [
@@ -35,7 +35,7 @@ const SchoolPage = () => {
       <PageHero 
         title="शाळा" 
         subtitle="माहिती"
-        image={mandirImage}
+        image={schoolImage}
       />
       <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
@@ -51,7 +51,7 @@ const SchoolPage = () => {
                 className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300"
               >
                 <img
-                  src={gavImage}
+                  src={school.id === 1 ? schoolImage : mandirImage}
                   alt={school.name}
                   className="w-full h-[200px] object-cover"
                 />

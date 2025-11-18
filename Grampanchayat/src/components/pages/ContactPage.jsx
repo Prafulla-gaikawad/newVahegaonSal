@@ -1,5 +1,5 @@
 import PageHero from '../PageHero';
-import gavImage from '../../images/gav.jpg';
+import backImage from '../../images/back.jpg';
 
 const ContactPage = () => {
   return (
@@ -7,7 +7,7 @@ const ContactPage = () => {
       <PageHero 
         title="संपर्क साधा" 
         subtitle="माहिती"
-        image={gavImage}
+        image={backImage}
       />
       <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">

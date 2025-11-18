@@ -1,6 +1,5 @@
 import PageHero from '../PageHero';
 import infoImage from '../../images/info.jpg';
-import gavImage from '../../images/gav.jpg';
 
 const VeterinaryPage = () => {
   const veterinaryCenters = [
@@ -27,7 +26,7 @@ const VeterinaryPage = () => {
       <PageHero 
         title="पशुवैद्यकीय दवाखाने" 
         subtitle="माहिती"
-        image={gavImage}
+        image={infoImage}
       />
       <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
