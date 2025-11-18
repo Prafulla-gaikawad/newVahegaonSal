@@ -14,18 +14,18 @@ const Navigation = ({ onOpenComplaint }) => {
       label: 'इतर',
       submenu: [
         { label: 'मंदिर', link: '#temple' },
-        { label: 'आरोग्य दवाखाने', link: '#health' },
+        // { label: 'आरोग्य दवाखाने', link: '#health' },
         { label: 'शाळा', link: '#school' },
-        { label: 'शेती', link: '#agriculture' },
-        { label: 'सूचना फलक', link: '#notice' },
+        // { label: 'शेती', link: '#agriculture' },
+        // { label: 'सूचना फलक', link: '#notice' },
         { label: 'गावाची माहिती', link: '#village-info' },
-        { label: 'पशुवैद्यकीय दवाखाने', link: '#veterinary' },
-        { label: 'बचत गट माहिती', link: '#savings-group' },
-        { label: 'लोकप्रिय योजना', link: '#schemes' },
+        // { label: 'पशुवैद्यकीय दवाखाने', link: '#veterinary' },
+        // { label: 'बचत गट माहिती', link: '#savings-group' },
+        // { label: 'लोकप्रिय योजना', link: '#schemes' },
         { label: 'Admin', link: '#admin-login' },
       ],
     },
-    { label: 'संपर्क साधा', link: '#contact' },
+    // { label: 'संपर्क साधा', link: '#contact' },
   ];
 
   return (
